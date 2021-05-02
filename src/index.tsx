@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
-interface Todo {
+type Todo = {
   value: string;
   id: number;
   checked: boolean;
@@ -32,7 +32,7 @@ const App: React.FC = () => {
 
   const handleOnEdit = (id: number, value: string) => {
     const newTodos = todos.map((todo)=> {
-      if(todo.id == id){
+      if(todo.id === id){
         todo.value = value
       }
       return todo
@@ -42,7 +42,7 @@ const App: React.FC = () => {
 
   const handleOnCheck = (id: number, checked: boolean) => {
     const newTodos = todos.map((todo) => {
-      if (todo.id == id) {
+      if (todo.id === id) {
         todo.checked = !checked
       }
       return todo
@@ -52,7 +52,7 @@ const App: React.FC = () => {
 
   const handleOnRemove = (id: number, removed: boolean) => {
     const newTodos = todos.map((todo)=> {
-      if(todo.id == id){
+      if(todo.id === id){
         todo.removed = !removed;
       }
       return todo;
